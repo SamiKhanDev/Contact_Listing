@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.devtools.ksp")
+
 
 
 }
@@ -73,9 +75,17 @@ dependencies {
     implementation(libs.androidx.room.paging)
     implementation (libs.androidx.lifecycle.runtime.ktx)
 
+
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.runtime)
+
+
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
     implementation (libs.androidx.lifecycle.runtime.ktx.v262)
     implementation (libs.androidx.room.runtime.v252 )// Replace with the latest version
+
+    ksp(libs.androidx.room.room.compiler)
+
 
 
     implementation(libs.androidx.core.ktx)
